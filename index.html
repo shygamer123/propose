@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Proposal</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Will you be my partner?</h1>
+    <img id="proposalGif" src="gomu.gif" alt="Placeholder GIF">
+    <div id="confirmMessage" style="display: none;">Are you sure??? hmmm???</div>
+    <div class="buttons">
+      <button id="noBtn">No</button>
+      <button id="yesBtn">Yes</button>
+    </div>
+  </div>
+
+  <script>
+    const noBtn = document.getElementById('noBtn');
+    const yesBtn = document.getElementById('yesBtn');
+    const proposalGif = document.getElementById('proposalGif');
+    const confirmMessage = document.getElementById('confirmMessage');
+    const buttonsContainer = document.querySelector('.buttons');
+
+    noBtn.addEventListener('click', function() {
+      proposalGif.src = 'cry.gif'; // Change GIF to crying
+      confirmMessage.style.display = 'block'; // Show confirm message
+    });
+
+    yesBtn.addEventListener('click', function() {
+      confirmMessage.style.display = 'none'; // Hide confirm message
+      document.body.style.backgroundColor = '#c0ffc0'; // Change background color to green
+      document.querySelector('h1').textContent = 'Yay! Let\'s celebrate!'; // Change heading text
+      proposalGif.src = 'celebration.gif'; // Change GIF to celebration
+      buttonsContainer.style.display = 'none'; // Hide all buttons
+      // You can add more changes or animations here as needed
+    });
+  </script>
+</body>
+</html>
